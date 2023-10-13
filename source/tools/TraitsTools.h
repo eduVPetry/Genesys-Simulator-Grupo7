@@ -19,6 +19,7 @@
 #include "HypothesisTester_if.h"
 #include "FitterDummyImpl.h"
 #include "Fitter_if.h"
+#include "FactorialDesign.h"
 
 template <typename T>
 struct TraitsTools {
@@ -46,6 +47,13 @@ template <> struct TraitsTools<HypothesisTester_if> {
  */
 template <> struct TraitsTools<Fitter_if> {
 	typedef FitterDummyImpl Implementation;
+};
+
+/*!
+ *  Configure the Factorial Design to be used
+ */
+template <> struct TraitsTools<FactorialDesign> {
+	typedef FactorialDesign Implementation;
 };
 
 #endif /* TRAITSTOOLS_H */
